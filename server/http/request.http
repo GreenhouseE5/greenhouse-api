@@ -1,0 +1,56 @@
+@port = 5000
+@baseUrl = http://localhost:{{port}}/api
+
+### POST /auth/signin
+POST {{baseUrl}}/auth/signin
+Content-Type: application/json
+
+{
+    "email": "aeap@gmail.com",
+    "password": "12345678"
+}
+
+### POST /users
+POST {{baseUrl}}/users/
+Content-Type: application/json
+
+{
+    "email": "esteban@gmail.com",
+    "password": "12345678",
+    "firstname": "Adolfo",
+    "lastname": "Alvarez"
+}
+
+### GET /users
+GET {{baseUrl}}/users
+
+### PUT /users
+PUT {{baseUrl}}/users/813a1a58-38b6-45ea-b653-bea16b95ba44
+Content-Type: application/json
+
+{
+    "email": "aeap1998@gmail.com"
+}
+
+### DELETE /users
+DELETE {{baseUrl}}/users/813a1a58-38b6-45ea-b653-bea16b95ba44
+
+### POST /users
+POST {{baseUrl}}/greenhouses
+Content-Type: application/json
+
+{
+    "name": "Invernadero Principal",
+    "description": "Descripcion",
+    "location": "Mérida Yucatán",
+    "user_id": "420da6a8-7fd5-4e68-89b7-8fca1d7d30b9"
+}
+
+### GET /greenhouses
+GET {{baseUrl}}/greenhouses
+
+### GET /logs
+GET {{baseUrl}}/logs
+
+### GET /logs/statistics/average
+GET {{baseUrl}}/logs/statistics/average?analysisOf=temperature&condition=time&start=16:00:00&end=17:00:00

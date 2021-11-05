@@ -1,0 +1,4 @@
+class Constants:
+    SOCKET_SERVER_URL='http://localhost:5000'
+    SERIAL_PORT='COM3'
+    GREENHOUSE_ID='b08e6d0f-1b02-4604-963c-052853350141'
