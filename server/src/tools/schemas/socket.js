@@ -7,7 +7,7 @@ const clientConnectionSchm = Joi.object({
 const getDataBody = Joi.object({
   greenhouse: Joi.string().uuid().required(),
   data: Joi.object({
-    hum: Joi.number(),
+    hum: Joi.string(),
     temp: Joi.number()
   }).required(),
   date: Joi.date().required()

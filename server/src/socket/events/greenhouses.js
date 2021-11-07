@@ -8,7 +8,6 @@ const onConnection = async (socket) => {
         entity: ModelsName.GREENHOUSE,
         filters: { id: body.greenhouse, is_active: true },
       })
-      console.log(greenhouse)
       const client = await Repository.findOne({
         entity: ModelsName.CONNECTION,
         filters: { user_id: greenhouse.user_id, is_active: true },
@@ -18,16 +17,17 @@ const onConnection = async (socket) => {
           .to(client.socket_id)
           .emit('sensor-data', JSON.stringify(body))
       }
-      await Repository.create({
-        entity: ModelsName.SENSOR_LOGS,
-        data: {
-          greenhouse_id: body.greenhouse,
-          temperature: body.temperature,
-          humidity: body.humidity,
-          date: body.date,
-          time: body.time.replace(/:/g, ''),
-        },
-      })
+      if (body.temperature && body.humidity)
+        await Repository.create({
+          entity: ModelsName.SENSOR_LOGS,
+          data: {
+            greenhouse_id: body.greenhouse,
+            temperature: parseFloat(body.temperature),
+            humidity: parseFloat(body.humidity),
+            date: body.date,
+            time: body.time,
+          },
+        })
     })
   } catch (error) {
     console.log('Error: ', error)

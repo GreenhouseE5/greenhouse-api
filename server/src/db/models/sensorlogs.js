@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       greenhouse_id: DataTypes.UUID,
       is_active: DataTypes.BOOLEAN,
-      temperature: DataTypes.INTEGER,
-      humidity: DataTypes.INTEGER,
+      temperature: DataTypes.FLOAT,
+      humidity: DataTypes.FLOAT,
       time: DataTypes.TIME,
       date: DataTypes.DATEONLY
     },

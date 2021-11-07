@@ -43,7 +43,7 @@ Content-Type: application/json
     "name": "Invernadero Principal",
     "description": "Descripcion",
     "location": "Mérida Yucatán",
-    "user_id": "420da6a8-7fd5-4e68-89b7-8fca1d7d30b9"
+    "user_id": "06e75ff4-67a2-4134-b84c-e5e828071a6c"
 }
 
 ### GET /greenhouses
@@ -53,4 +53,4 @@ GET {{baseUrl}}/greenhouses
 GET {{baseUrl}}/logs
 
 ### GET /logs/statistics/average
-GET {{baseUrl}}/logs/statistics/average?analysisOf=temperature&condition=time&start=16:00:00&end=17:00:00
+GET {{baseUrl}}/logs/statistics/average?analysisOf=temperature&condition=time&start=01:00:00&end=02:00:00

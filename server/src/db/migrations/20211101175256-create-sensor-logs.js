@@ -11,10 +11,10 @@ module.exports = {
         type: Sequelize.UUID,
       },
       humidity: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       temperature: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       date: {
         type: Sequelize.DATEONLY,
