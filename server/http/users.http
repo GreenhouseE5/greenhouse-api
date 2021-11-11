@@ -1,12 +1,12 @@
 @port = 5000
 @baseUrl = http://localhost:{{port}}/api
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA2ZTc1ZmY0LTY3YTItNDEzNC1iODRjLWU1ZTgyODA3MWE2YyIsImVtYWlsIjoiZXN0ZWJhbkBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJBZG9sZm8iLCJsYXN0bmFtZSI6IkFsdmFyZXoiLCJpc19hY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMDdUMDE6MTY6MjQuMzU4WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMDdUMDE6MTY6MjQuMzU4WiIsImV4cCI6MTYzNjU4MTIwMywiaWF0IjoxNjM2NTgwMzAzfQ.IYL5DURIhAziec1FPmZ8bBp2pjHa8VJ8a2M4xYyLDRo
 ### POST /auth/signin
 POST {{baseUrl}}/auth/signin
 Content-Type: application/json
 
 {
-    "email": "aeap@gmail.com",
+    "email": "esteban@gmail.com",
     "password": "12345678"
 }
 
@@ -22,7 +22,8 @@ Content-Type: application/json
 }
 
 ### GET /users
-GET {{baseUrl}}/users
+GET {{baseUrl}}/users/me
+Authorization: Bearer {{token}}
 
 ### PUT /users
 PUT {{baseUrl}}/users/813a1a58-38b6-45ea-b653-bea16b95ba44
@@ -34,23 +35,3 @@ Content-Type: application/json
 
 ### DELETE /users
 DELETE {{baseUrl}}/users/813a1a58-38b6-45ea-b653-bea16b95ba44
-
-### POST /users
-POST {{baseUrl}}/greenhouses
-Content-Type: application/json
-
-{
-    "name": "Invernadero Principal",
-    "description": "Descripcion",
-    "location": "Mérida Yucatán",
-    "user_id": "06e75ff4-67a2-4134-b84c-e5e828071a6c"
-}
-
-### GET /greenhouses
-GET {{baseUrl}}/greenhouses
-
-### GET /logs
-GET {{baseUrl}}/logs
-
-### GET /logs/statistics/average
-GET {{baseUrl}}/logs/statistics/average?analysisOf=temperature&condition=time&start=01:00:00&end=02:00:00

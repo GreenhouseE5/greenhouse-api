@@ -12,7 +12,7 @@ const sequelize = require('sequelize')
  * @param {Function} next - Express middleware function
  */
 
-const get = async ({ query }, res, next) => {
+const get = async ({ query, headers }, res, next) => {
   try {
     const { limit = 20, order = ['id', 'ASC'], offset = 0, ...filters } = query
     const logs = await Repository.find({
@@ -75,8 +75,8 @@ const remove = async ({ params }, res, next) => {
 }
 
 /**
- * @function get
- * @description Controller for GET /api/logs
+ * @function getAverage
+ * @description Controller for GET /api/logs/statistics/average
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
  * @param {Function} next - Express middleware function
@@ -87,7 +87,6 @@ const getAverage = async ({ query }, res, next) => {
     const { analysisOf = 'temperature', condition = 'time' } = query
     const logs = await Repository.find({
       entity: ModelsName.SENSOR_LOGS,
-      filters: {},
       offset: 0,
       limit: null,
       order: ['id', 'ASC'],

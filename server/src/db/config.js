@@ -7,7 +7,8 @@ module.exports = {
     database: ConfigService.get(Constants.DB_NAME),
     host: ConfigService.get(Constants.DB_HOST),
     dialect: 'postgres',
-    port: ConfigService.get(Constants.DB_PORT)
+    port: ConfigService.get(Constants.DB_PORT),
+    logging: false
   },
   test: {
     username: ConfigService.get(Constants.DB_USERNAME),

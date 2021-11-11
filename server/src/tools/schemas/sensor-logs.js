@@ -7,7 +7,8 @@ const getOneSchm = Joi.object({
 
 const getSchm = Joi.object({
   greenhouse_id: Joi.string(),
-  date: Joi.date(),
+  date: Joi.date().format('DD-MM-YYYY').utc(),
+  time: Joi.date().format('HH:mm:ss').raw(),
   limit: Joi.number().integer(),
   offset: Joi.number().integer(),
   order: Joi.array()

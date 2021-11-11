@@ -1,0 +1,19 @@
+@port = 5000
+@baseUrl = http://localhost:{{port}}/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA2ZTc1ZmY0LTY3YTItNDEzNC1iODRjLWU1ZTgyODA3MWE2YyIsImVtYWlsIjoiZXN0ZWJhbkBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJBZG9sZm8iLCJsYXN0bmFtZSI6IkFsdmFyZXoiLCJpc19hY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMDdUMDE6MTY6MjQuMzU4WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMDdUMDE6MTY6MjQuMzU4WiIsImV4cCI6MTYzNjU4NTU4NywiaWF0IjoxNjM2NTg0Njg3fQ.BtdhSl00kIJBq1wq8XHl7OUkzyyF6JNjAnGhydc74-0
+
+### POST /greenhouses
+POST {{baseUrl}}/greenhouses
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "Invernadero Principal",
+    "description": "Descripcion",
+    "location": "Mérida Yucatán",
+    "user_id": "06e75ff4-67a2-4134-b84c-e5e828071a6c"
+}
+
+### GET /greenhouses
+GET {{baseUrl}}/greenhouses
+Authorization: Bearer {{token}}

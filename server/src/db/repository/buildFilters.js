@@ -16,8 +16,8 @@ module.exports.buildGHFilters = (data) => {
 }
 
 module.exports.buildLogFilters = (data) => {
-  if (data.name) data.name = { [Op.substring]: data.name }
-  if (data.location) data.location = { [Op.substring]: data.location }
+  if (data.date) data.date = { [Op.gte]: data.date }
+  if (data.time) data.time = { [Op.gte]: data.time }
   data.is_active = true
   return data
 }

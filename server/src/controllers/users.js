@@ -73,6 +73,26 @@ const getOne = async ({ params }, res, next) => {
 }
 
 /**
+ * @function getOne
+ * @description Controller for GET /api/users/:id
+ * @param {Object} req
+ * @param {Object} res
+ * @param {Function} next
+ */
+
+ const getMe = async ({ params, headers }, res, next) => {
+  try {
+    const user = await Repository.findOne({
+      entity: ModelsName.USER,
+      filters: { id: headers.user.id, is_active: true },
+    })
+    res.status(200).json({ data: user || {}, message: 'Success' })
+  } catch (error) {
+    next(error)
+  }
+}
+
+/**
  * @function update
  * @description Controller for PUT /api/users/:id
  * @param {Object} req
@@ -121,4 +141,5 @@ module.exports = {
   getOne,
   update,
   remove,
+  getMe
 }

@@ -1,0 +1,11 @@
+@port = 5000
+@baseUrl = http://localhost:{{port}}/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA2ZTc1ZmY0LTY3YTItNDEzNC1iODRjLWU1ZTgyODA3MWE2YyIsImVtYWlsIjoiZXN0ZWJhbkBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJBZG9sZm8iLCJsYXN0bmFtZSI6IkFsdmFyZXoiLCJpc19hY3RpdmUiOnRydWUsImNyZWF0ZWRBdCI6IjIwMjEtMTEtMDdUMDE6MTY6MjQuMzU4WiIsInVwZGF0ZWRBdCI6IjIwMjEtMTEtMDdUMDE6MTY6MjQuMzU4WiIsImV4cCI6MTYzNjU4NTI0MiwiaWF0IjoxNjM2NTg0MzQyfQ.rNSdU08DZmfwCZMcN8uf22cudOnDJAAwTo9qNplTUis
+
+### GET /logs
+GET {{baseUrl}}/logs
+Authorization: Bearer {{token}}
+
+### GET /logs/statistics/average
+GET {{baseUrl}}/logs/statistics/average?analysisOf=temperature&condition=time&start=01:00:00&end=02:00:00
+Authorization: Bearer {{token}}

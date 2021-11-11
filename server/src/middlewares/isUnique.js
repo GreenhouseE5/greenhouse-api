@@ -13,7 +13,6 @@ const IsUnique =
           entity,
           filters: { [column]: field },
         })
-        console.log(result);
         if (result)
           throw new HttpError(400, `${attribute} must be unique for entity`)
       }

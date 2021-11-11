@@ -3,12 +3,12 @@ const ModelsName = require('../../db/models.enum')
 
 const onConnection = async (socket) => {
   try {
-    const user_id = socket.handshake.query.client
+    const user_id = socket.handshake.query.user_id
     const client = await Repository.findOne({
       entity: ModelsName.CONNECTION,
       filters: { user_id, is_active: true },
     })
-    if (client) {
+    if (!client) {
       await Repository.create({
         entity: ModelsName.CONNECTION,
         data: {

@@ -1,7 +1,7 @@
 const Joi = require('joi')
 
 const clientConnectionSchm = Joi.object({
-  client: Joi.string().uuid().required()
+  token: Joi.string().required()
 }).unknown(true)
 
 const getDataBody = Joi.object({

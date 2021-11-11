@@ -10,7 +10,7 @@ const onConnection = async (socket) => {
       })
       const client = await Repository.findOne({
         entity: ModelsName.CONNECTION,
-        filters: { user_id: greenhouse.user_id, is_active: true },
+        filters: { user_id: greenhouse.dataValues.user_id, is_active: true },
       })
       if (client && client.is_connected) {
         global.sockets.client
