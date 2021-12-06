@@ -18,7 +18,7 @@ const signin = async ({ body }, res, next) => {
     const { password, ...tokenPayload } = user.dataValues
     const token = generateToken(
       tokenPayload,
-      ConfigService.get(Constants.JWT_EXP_ACCESS_TKN)
+      ConfigService.get(Constants.JWT_EXP_REFRESH_TKN)
     )
     res.status(200).send({
       message: 'Success',

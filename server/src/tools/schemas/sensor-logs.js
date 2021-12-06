@@ -7,7 +7,7 @@ const getOneSchm = Joi.object({
 
 const getSchm = Joi.object({
   greenhouse_id: Joi.string(),
-  date: Joi.date().format('DD-MM-YYYY').utc(),
+  date: Joi.date().format('YYYY-MM-DD').utc(),
   time: Joi.date().format('HH:mm:ss').raw(),
   limit: Joi.number().integer(),
   offset: Joi.number().integer(),
@@ -25,7 +25,7 @@ const averageStatistics = Joi.object({
   start: Joi.alternatives().conditional('condition', [
     {
       is: 'date',
-      then: Joi.date().format('DD-MM-YYYY').utc(),
+      then: Joi.date().format('YYYY-MM-DD').utc(),
     },
     {
       is: 'time',
@@ -35,7 +35,7 @@ const averageStatistics = Joi.object({
   end: Joi.alternatives().conditional('condition', [
     {
       is: 'date',
-      then: Joi.date().format('DD-MM-YYYY').utc().min(Joi.ref('start')),
+      then: Joi.date().format('YYYY-MM-DD').utc().min(Joi.ref('start')),
     },
     {
       is: 'time',

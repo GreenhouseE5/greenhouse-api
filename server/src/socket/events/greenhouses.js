@@ -17,7 +17,8 @@ const onConnection = async (socket) => {
           .to(client.socket_id)
           .emit('sensor-data', JSON.stringify(body))
       }
-      if (body.temperature && body.humidity)
+      if (body.temperature && body.humidity && parseFloat(body.temperature) !== NaN) {
+        console.log(body)
         await Repository.create({
           entity: ModelsName.SENSOR_LOGS,
           data: {
@@ -28,6 +29,7 @@ const onConnection = async (socket) => {
             time: body.time,
           },
         })
+      }
     })
   } catch (error) {
     console.log('Error: ', error)
