@@ -13,7 +13,7 @@ const getSchm = Joi.object({
   offset: Joi.number().integer(),
   order: Joi.array()
     .items(
-      Joi.string().valid('id', 'greenhouse_id', 'date').required(),
+      Joi.string().valid('id', 'greenhouse_id', 'date', 'createdAt').required(),
       Joi.string().valid('ASC', 'DESC').required()
     )
     .length(2),
