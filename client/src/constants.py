@@ -1,4 +1,4 @@
 class Constants:
-    SOCKET_SERVER_URL='http://localhost:5000'
+    SOCKET_SERVER_URL='https://3438-189-172-52-201.ngrok.io/'
     SERIAL_PORT='COM3'
-    GREENHOUSE_ID='fe4d2693-9329-45e9-9fec-b9d8e2cf150d'
+    GREENHOUSE_ID='21d8df9e-ee40-4f66-bc1c-312a7576b45f'
